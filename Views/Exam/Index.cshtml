@@ -1,0 +1,34 @@
+﻿@using AspNet.MVC.Models;
+@using AspNet.MVC.Controllers;
+@model List<Book>
+
+
+@{
+    ViewData["Title"] = "Knjižara";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Naslov</th>
+            <th scope="col">Žanr</th>
+            <th scope="col">Autor</th>
+        </tr>
+    </thead>
+
+
+
+    <tbody class="table-group-divider">
+
+        @foreach (var book in Model)
+        {
+            <tr>
+                <th scope="row">@book.id</th>
+                <td>@book.Naslov</td>
+                <td>@book.Zanr</td>
+                <td>@book.Pisac.Ime @book.Pisac.Prezime</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
